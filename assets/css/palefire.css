@@ -623,7 +623,8 @@ ul.social li a {
 
 /* bio and Book Us text: same size (bigger on computers, smaller on phones) */
 .bio-frame .bio-text,
-#book header > p { font-size: 1.05em; }
+#book header > p,
+#media header > p { font-size: 1.05em; }
 
 /* footer below Book Us: plain, no damask */
 #footer.wrapper { background: var(--bg); padding: 3em 0 4em 0; }
@@ -631,7 +632,8 @@ ul.social li a {
 
 @media screen and (max-width: 736px) {
 	.bio-frame .bio-text,
-	#book header > p { font-size: 0.9em; }
+	#book header > p,
+	#media header > p { font-size: 0.9em; }
 }
 
 /* thank-you line shown after the booking form is sent */
