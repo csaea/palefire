@@ -118,6 +118,31 @@ header > p { color: var(--text-dim); font-style: normal; }
 		filter: drop-shadow(0 0 14px rgba(163, 18, 42, 0.5));
 	}
 
+	/* profile photo cut into a pointed arch (same shape as images/arch.svg) */
+	.arch-frame .profile {
+		position: relative;
+		display: block;
+		width: 16em;
+		max-width: 100%;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		object-position: 50% 30%;
+		margin: 2em auto 1.5em auto;
+		-webkit-mask: url("images/arch.svg") center / 100% 100% no-repeat;
+		mask: url("images/arch.svg") center / 100% 100% no-repeat;
+	}
+
+	.arch-frame .button { position: relative; margin-top: 0.5em; }
+
+	.arch-frame .note {
+		position: relative;
+		margin: 0.75em 0 0 0;
+		font-size: 0.85em;
+		color: var(--text-dim);
+		font-family: var(--font-caps);
+		letter-spacing: 0.1em;
+	}
+
 .visually-hidden {
 	position: absolute;
 	width: 1px; height: 1px;
