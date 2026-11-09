@@ -65,15 +65,15 @@ h3, h4, h5, h6 {
 
 header > p { color: var(--text-dim); font-style: normal; }
 
-/* Ornamental divider under every section heading (images/ornament.svg) */
+/* Divider under every section heading: the eye symbol from the logo (images/ornament-eye.png) */
 .wrapper header h2:after {
 	content: '';
 	display: block;
-	width: 12em;
+	width: 21em;
 	max-width: 80%;
-	height: 1.2em;
-	margin: 0.4em auto 0 auto;
-	background: url("images/ornament.svg") center / contain no-repeat;
+	height: 2.8em;
+	margin: 0.6em auto 0 auto;
+	background: url("images/ornament-eye.png") center / contain no-repeat;
 	font-size: 0.4em;
 }
 
@@ -91,14 +91,6 @@ header > p { color: var(--text-dim); font-style: normal; }
 		color: var(--text);
 		line-height: 1.75;
 		margin: 0 0 1.25em 0;
-	}
-
-	/* under "Palefire": the eye symbol from the logo, in red, between two lines */
-	.wrapper .bio-frame h2:after {
-		width: 21em;
-		height: 2.8em;
-		margin-top: 0.6em;
-		background-image: url("images/ornament-eye.png");
 	}
 
 	/* band profile photo */
