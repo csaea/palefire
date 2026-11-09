@@ -1,0 +1,361 @@
+/*
+	Pale Fire theme
+	Loaded AFTER main.css, so everything here overrides the template.
+	Change the colors and fonts in :root to restyle the whole site.
+*/
+
+:root {
+	/* Colors */
+	--bg:          #0b0a0d;   /* page background (near-black, slight violet) */
+	--bg-alt:      #121016;   /* alternate section background */
+	--surface:     #17141c;   /* cards, inputs */
+	--line:        #2a2430;   /* thin borders */
+	--text:        #c9c3cf;   /* body text (pale silver) */
+	--text-dim:    #8a8290;   /* secondary text */
+	--heading:     #eee8f2;   /* headings */
+	--blood:       #a3122a;   /* main accent (deep crimson) */
+	--blood-hi:    #e0203f;   /* brighter crimson for hover / glow */
+	--violet:      #6d3fa8;   /* cyber accent */
+
+	/* Fonts */
+	--font-display: 'Grenze Gotisch', 'Cinzel', serif;   /* big headings: modern blackletter */
+	--font-caps:    'Cinzel', serif;                      /* nav, buttons, small headings */
+	--font-body:    'Cormorant Garamond', Georgia, serif; /* paragraphs */
+}
+
+/* ---------- Base ---------- */
+
+body {
+	background: var(--bg);
+	color: var(--text);
+}
+
+body, input, textarea, select {
+	font-family: var(--font-body);
+	font-size: 15pt;
+	font-weight: 400;
+	color: var(--text);
+}
+
+a { color: var(--blood-hi); }
+a:hover { color: var(--heading); }
+
+strong, b { color: var(--heading); }
+
+h1, h2, h3, h4, h5, h6 {
+	color: var(--heading);
+	font-weight: 400;
+	letter-spacing: 0.02em;
+}
+
+h1, h2 {
+	font-family: var(--font-display);
+	font-weight: 500;
+	text-shadow: 0 0 18px rgba(163, 18, 42, 0.45);
+}
+
+h2 { font-size: 3em; }
+
+h3, h4, h5, h6 {
+	font-family: var(--font-caps);
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	font-size: 1.1em;
+}
+
+header > p { color: var(--text-dim); font-style: italic; }
+
+hr { border-top-color: var(--line); }
+
+/* ---------- Nav (layout kept, recolored) ---------- */
+
+#nav {
+	background: rgba(8, 7, 10, 0.92);
+	border-bottom: 1px solid var(--line);
+	backdrop-filter: blur(6px);
+}
+
+	#nav a {
+		font-family: var(--font-caps);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		font-size: 0.8em;
+		border-radius: 0;
+		color: var(--text) !important;
+	}
+
+		#nav a:hover {
+			background: transparent;
+			color: var(--blood-hi) !important;
+		}
+
+		#nav a.active {
+			background: transparent;
+			color: var(--heading) !important;
+			box-shadow: inset 0 -2px 0 var(--blood);
+		}
+
+			#nav a.active:before { display: none; }
+
+/* ---------- Section wrappers ---------- */
+
+.wrapper,
+.wrapper.style1,
+.wrapper.style2,
+.wrapper.style3,
+.wrapper.style4 {
+	background-image: none;
+	box-shadow: none;
+	text-shadow: none;
+	color: var(--text);
+	border-top: 1px solid var(--line);
+}
+
+.wrapper.style1, .wrapper.style3 { background-color: var(--bg); }
+.wrapper.style2, .wrapper.style4 { background-color: var(--bg-alt); }
+
+.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3,
+.wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 { color: var(--heading); }
+
+/* ---------- Hero: full-width image only ---------- */
+
+#top.hero {
+	position: relative;
+	padding: 0;
+	height: 100vh;
+	min-height: 28em;
+	overflow: hidden;
+	border-top: 0;
+	background: #000;
+}
+
+	#top.hero img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	/* dark vignette + fade into the next section */
+	#top.hero:after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		background:
+			radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,0.7) 100%),
+			linear-gradient(to bottom, rgba(11,10,13,0) 70%, var(--bg-alt) 100%);
+	}
+
+/* ---------- Buttons: sharp, thin-bordered, uppercase ---------- */
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.button {
+	background: transparent;
+	background-image: none;
+	border: 1px solid var(--blood);
+	border-radius: 0;
+	box-shadow: none;
+	text-shadow: none;
+	color: var(--heading) !important;
+	font-family: var(--font-caps);
+	font-weight: 600;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	letter-spacing: 0.25em;
+	padding: 1em 2.5em;
+	transition: background-color .25s, box-shadow .25s, border-color .25s;
+}
+
+	input[type="button"]:hover,
+	input[type="submit"]:hover,
+	input[type="reset"]:hover,
+	button:hover,
+	.button:hover {
+		background-color: var(--blood);
+		border-color: var(--blood-hi);
+		box-shadow: 0 0 18px rgba(224, 32, 63, 0.45);
+	}
+
+	input[type="button"]:active,
+	input[type="submit"]:active,
+	input[type="reset"]:active,
+	button:active,
+	.button:active {
+		background-color: #7a0d1f;
+		top: 0;
+	}
+
+	input[type="button"].large,
+	input[type="submit"].large,
+	input[type="reset"].large,
+	button.large,
+	.button.large {
+		font-size: 0.95em;
+		letter-spacing: 0.3em;
+	}
+
+	input[type="button"].alt,
+	input[type="submit"].alt,
+	input[type="reset"].alt,
+	button.alt,
+	.button.alt {
+		background: transparent;
+		border-color: var(--line);
+		box-shadow: none;
+	}
+
+		.button.alt:hover,
+		input[type="reset"].alt:hover {
+			background: var(--surface);
+			border-color: var(--text-dim);
+			box-shadow: none;
+		}
+
+/* ---------- Media / Shows / Book Us tiles ---------- */
+
+.box {
+	background: var(--surface);
+	box-shadow: none;
+	border: 1px solid var(--line);
+	border-radius: 0;
+}
+
+a.box.style1 {
+	display: block;
+	text-decoration: none;
+	color: var(--text);
+	padding: 3em 2em;
+	transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+
+	a.box.style1:hover {
+		border-color: var(--blood);
+		box-shadow: 0 0 24px rgba(163, 18, 42, 0.35), inset 0 0 40px rgba(109, 63, 168, 0.12);
+		transform: translateY(-3px);
+	}
+
+	a.box.style1 h3 {
+		font-size: 1.4em;
+		letter-spacing: 0.3em;
+		margin: 0 0 0.5em 0;
+	}
+
+	a.box.style1 p { color: var(--text-dim); margin: 0; }
+
+.icon.featured {
+	color: var(--blood-hi);
+	cursor: inherit;
+	text-shadow: 0 0 20px rgba(224, 32, 63, 0.5);
+}
+
+	.icon.featured:before { font-size: 3em; }
+
+/* ---------- Media grid (Instagram-style) ---------- */
+
+.gram {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 4px;
+	margin: 0 0 3em 0;
+}
+
+	.gram a {
+		position: relative;
+		display: block;
+		aspect-ratio: 1 / 1;
+		overflow: hidden;
+		background: var(--surface);
+	}
+
+	.gram img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		filter: saturate(0.85) contrast(1.05);
+		transition: transform .4s, filter .4s;
+	}
+
+	/* hover: darken + crimson tint + icon */
+	.gram a:after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(163,18,42,0.45), rgba(109,63,168,0.35));
+		opacity: 0;
+		transition: opacity .3s;
+	}
+
+	.gram a:hover img { transform: scale(1.05); filter: saturate(0.5) brightness(0.7); }
+	.gram a:hover:after { opacity: 1; }
+
+	/* small badge in the corner: photo or video */
+	.gram .badge {
+		position: absolute;
+		top: 0.6em;
+		right: 0.7em;
+		z-index: 2;
+		color: #fff;
+		font-size: 0.9em;
+		text-shadow: 0 0 6px rgba(0,0,0,0.8);
+	}
+
+/* ---------- Contact ---------- */
+
+.wrapper.style4 form input[type=text],
+.wrapper.style4 form input[type=password],
+.wrapper.style4 form select,
+.wrapper.style4 form textarea {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 0;
+	color: var(--text);
+}
+
+	.wrapper.style4 form input[type=text]:focus,
+	.wrapper.style4 form textarea:focus {
+		background: var(--surface);
+		border-color: var(--blood);
+		box-shadow: 0 0 10px rgba(163, 18, 42, 0.35);
+	}
+
+::placeholder { color: var(--text-dim) !important; }
+
+ul.social li a {
+	background: transparent !important;
+	border-radius: 0;
+}
+
+	ul.social li a:before {
+		background: var(--surface) !important;
+		background-image: none !important;
+		border: 1px solid var(--line);
+		border-radius: 0;
+		box-shadow: none;
+		color: var(--text) !important;
+		text-shadow: none;
+		transition: border-color .25s, color .25s, box-shadow .25s;
+	}
+
+	ul.social li a:hover:before {
+		border-color: var(--blood);
+		color: var(--blood-hi) !important;
+		box-shadow: 0 0 12px rgba(224, 32, 63, 0.4);
+	}
+
+#copyright { color: var(--text-dim); }
+#copyright a { color: var(--text); }
+
+/* ---------- Small screens ---------- */
+
+@media screen and (max-width: 736px) {
+	h2 { font-size: 2.2em; }
+	#top.hero { height: 70vh; padding: 0; }
+	.gram { gap: 2px; }
+	#nav a { letter-spacing: 0.08em; padding: 0 0.5em; font-size: 0.7em; }
+}
