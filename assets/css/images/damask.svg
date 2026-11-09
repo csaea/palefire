@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="168" viewBox="0 0 120 168">
+	<!-- Victorian damask tile (half-drop repeat). Motif color is set by fill below. -->
+	<defs>
+		<g id="m" fill="#18161c">
+			<!-- central leaf -->
+			<path d="M0,-34 C13,-18 13,14 0,32 C-13,14 -13,-18 0,-34Z M0,-18 C5,-8 5,8 0,18 C-5,8 -5,-8 0,-18Z" fill-rule="evenodd"/>
+			<!-- top flame -->
+			<path d="M0,-50 C5,-44 5,-40 0,-37 C-5,-40 -5,-44 0,-50Z"/>
+			<!-- upper scrolls -->
+			<path d="M-3,-30 C-20,-38 -32,-26 -27,-15 C-23,-7 -12,-10 -15,-18 C-17,-23 -22,-20 -21,-17 C-24,-24 -16,-30 -3,-26Z"/>
+			<path d="M3,-30 C20,-38 32,-26 27,-15 C23,-7 12,-10 15,-18 C17,-23 22,-20 21,-17 C24,-24 16,-30 3,-26Z"/>
+			<!-- lower scrolls -->
+			<path d="M-2,30 C-18,40 -36,32 -34,16 C-33,6 -20,4 -19,13 C-18,19 -25,20 -26,16 C-27,26 -16,32 -2,26Z"/>
+			<path d="M2,30 C18,40 36,32 34,16 C33,6 20,4 19,13 C18,19 25,20 26,16 C27,26 16,32 2,26Z"/>
+			<!-- base drop -->
+			<path d="M0,36 C4,42 4,46 0,50 C-4,46 -4,42 0,36Z"/>
+			<circle cx="-40" cy="0" r="2"/><circle cx="40" cy="0" r="2"/>
+		</g>
+	</defs>
+	<use xlink:href="#m" x="60" y="84"/>
+	<use xlink:href="#m" x="0" y="0"/><use xlink:href="#m" x="120" y="0"/>
+	<use xlink:href="#m" x="0" y="168"/><use xlink:href="#m" x="120" y="168"/>
+</svg>
