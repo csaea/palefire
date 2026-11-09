@@ -625,12 +625,8 @@ ul.social li a {
 .bio-frame .bio-text,
 #book header > p { font-size: 1.05em; }
 
-/* Instagram icon under the Media heading */
-#media header .social { margin: 1em 0 0 0; padding: 0; }
-#media header .social li { margin-top: 0; }
-
 /* footer below Book Us: plain, no damask */
-#footer.wrapper { background: var(--bg-alt); padding: 3em 0 4em 0; }
+#footer.wrapper { background: var(--bg); padding: 3em 0 4em 0; }
 #footer .follow h3 { margin-top: 0; }
 
 @media screen and (max-width: 736px) {
@@ -639,4 +635,4 @@ ul.social li a {
 }
 
 /* thank-you line shown after the booking form is sent */
-.form-sent { margin: 1em 0 0 0; color: var(--blood-hi); font-family: var(--font-caps); letter-spacing: 0.05em; }
+.form-sent { margin: 1em 0 0 0; font-size: 0.8em; color: var(--blood-hi); font-family: var(--font-caps); letter-spacing: 0.05em; }
