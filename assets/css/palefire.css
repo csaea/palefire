@@ -77,40 +77,24 @@ header > p { color: var(--text-dim); font-style: normal; }
 	font-size: 0.4em;
 }
 
-/* Gothic window frame around the bio: pointed arch on top, straight sides */
-.arch-frame {
+/* Bordered box around the bio */
+.bio-frame {
 	position: relative;
-	max-width: 30em;
+	max-width: 34em;
 	margin: 0 auto;
-	padding: 0 2.5em 2.5em 2.5em;
+	padding: 3em 2.5em 2.5em 2.5em;
+	border: 1px solid #3a3142;
 }
 
-	/* the window's straight sides and sill, starting where the arch ends
-	   (margin-top % is a % of the width; 178/300 is the arch's height/width) */
-	.arch-frame:after {
-		content: '';
-		position: absolute;
-		top: 0; left: 0; right: 0; bottom: 0;
-		margin-top: 59.333%;
-		border: 1px solid #3a3142;
-		border-top: 0;
-		pointer-events: none;
+	.bio-frame .bio-text {
+		text-align: left;
+		color: var(--text);
+		line-height: 1.75;
+		margin: 0 0 1.25em 0;
 	}
 
-	.arch-frame:before {
-		content: '';
-		display: block;
-		aspect-ratio: 300 / 178;
-		margin: 0 0 -13em 0;
-		width: calc(100% + 5em);
-		margin-left: -2.5em;
-		background: url("images/arch-top.svg") bottom / 100% 100% no-repeat;
-	}
-
-	.arch-frame h2 { position: relative; }
-
-	/* symbol (from the logo) at the top of the bio arch */
-	.arch-frame .symbol {
+	/* symbol (from the logo) at the top of the bio box */
+	.bio-frame .symbol {
 		position: relative;
 		display: block;
 		width: 6.5em;
@@ -119,7 +103,7 @@ header > p { color: var(--text-dim); font-style: normal; }
 	}
 
 	/* band profile photo */
-	.arch-frame .profile {
+	.bio-frame .profile {
 		position: relative;
 		display: block;
 		width: 18em;
@@ -129,9 +113,9 @@ header > p { color: var(--text-dim); font-style: normal; }
 		border: 1px solid var(--line);
 	}
 
-	.arch-frame .button { position: relative; margin-top: 0.5em; }
+	.bio-frame .button { position: relative; margin-top: 0.5em; }
 
-	.arch-frame .note {
+	.bio-frame .note {
 		position: relative;
 		margin: 0.75em 0 0 0;
 		font-size: 0.85em;
@@ -562,10 +546,9 @@ ul.social li a {
 	#top.hero .banner { aspect-ratio: 1 / 1; }
 	#top.hero .logo { height: 62%; }
 	#links { padding: 2.5em 0; }
-	.arch-frame .symbol { width: 5em; }
+	.bio-frame .symbol { width: 5em; }
 	.gram { gap: 2px; }
-	.arch-frame { padding: 0 1.25em 1.5em 1.25em; }
-	.arch-frame:before { width: calc(100% + 2.5em); margin: 0 0 -7em -1.25em; }
+	.bio-frame { padding: 2em 1.25em 1.5em 1.25em; }
 	.roundels { gap: 0.9em; }
 	.roundels .ring { width: 5em; height: 5em; }
 	.roundels svg { width: 2em; height: 2em; }
