@@ -193,7 +193,7 @@ hr { border-top-color: var(--line); }
 		height: auto;
 		aspect-ratio: 21 / 9;
 		object-fit: cover;
-		object-position: 50% 30%;   /* keep faces in view when cropped */
+		object-position: 50% 6%;   /* keep faces in view when cropped */
 	}
 
 	/* darkens the edges so the logo stands out */
