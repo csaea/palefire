@@ -8,7 +8,7 @@
 - `assets/js/` — scripts (`main.js` is the template's own logic; `lightbox.js` opens media photos full size — each tile's link points to its full image).
 - `assets/css/images/` — gothic shapes: `arch.svg` (pointed arch behind show dates), `ornament-eye.png` (eye-symbol divider under every heading).
 - `images/logo.png`, `images/symbol.png`, `images/favicon.png` — band logo, the eye symbol from its top, and the browser-tab icon (rendered from the 3D logo).
-- `images/banner.jpg` — wide photo behind the logo at the top (placeholder; replace with a photo of the band playing). It's cropped to fit, so keep the important part near the middle.
+- `images/hero.jpg` — wide photo behind the logo at the top (placeholder; replace with a photo of the band playing). It's cropped to fit, so keep the important part near the middle.
 - `images/` — replace `pic00.jpg`–`pic06.jpg` with your own images (keep names or update `index.html`).
 
 Preview locally by opening `index.html` in a browser.
