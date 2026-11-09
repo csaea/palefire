@@ -547,6 +547,7 @@ button,
 /* ---------- Contact ---------- */
 
 .wrapper.style4 form input[type=text],
+.wrapper.style4 form input[type=email],
 .wrapper.style4 form input[type=password],
 .wrapper.style4 form select,
 .wrapper.style4 form textarea {
@@ -557,6 +558,7 @@ button,
 }
 
 	.wrapper.style4 form input[type=text]:focus,
+	.wrapper.style4 form input[type=email]:focus,
 	.wrapper.style4 form textarea:focus {
 		background: var(--surface);
 		border-color: var(--blood);
@@ -635,3 +637,6 @@ ul.social li a {
 	.bio-frame .bio-text,
 	#book header > p { font-size: 0.9em; }
 }
+
+/* thank-you line shown after the booking form is sent */
+.form-sent { margin: 1em 0 0 0; color: var(--blood-hi); font-family: var(--font-caps); letter-spacing: 0.05em; }

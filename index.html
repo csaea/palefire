@@ -134,23 +134,28 @@
 					</header>
 					<div class="row">
 						<div class="col-12">
-							<!-- This form opens the visitor's email app addressed to us.
-							     For a form that sends without an email app, use a service like formspree.io. -->
-							<form method="post" action="mailto:palefireevents@gmail.com" enctype="text/plain">
+							<!-- Sends through formsubmit.co to palefireevents@gmail.com (free, no account).
+							     The very first message triggers a one-time "Activate" email to that inbox: click it. -->
+							<form method="post" action="https://formsubmit.co/palefireevents@gmail.com">
+								<input type="hidden" name="_subject" value="New booking request from the Palefire site" />
+								<input type="hidden" name="_template" value="table" />
+								<input type="hidden" name="_next" id="form-next" value="" />
+								<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 								<div class="row">
 									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Your name" />
+										<input type="text" name="name" id="name" placeholder="Your name" required />
 									</div>
 									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Your email" />
+										<input type="email" name="email" id="email" placeholder="Your email" required />
 									</div>
 									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Tell us about your event: date, venue, times, etc."></textarea>
+										<textarea name="message" id="message" placeholder="Tell us about your event: date, venue, times, etc." required></textarea>
 									</div>
 									<div class="col-12">
 										<ul class="actions">
 											<li><input type="submit" value="Send" /></li>
 										</ul>
+										<p class="form-sent" hidden>Thank you. Your message is on its way; we&rsquo;ll be in touch soon.</p>
 									</div>
 								</div>
 							</form>
@@ -186,6 +191,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/lightbox.js"></script>
+			<script>
+				// after sending, come back to this page and show the thank-you line
+				document.getElementById('form-next').value = location.href.split(/[?#]/)[0] + '?sent#book';
+				if (/[?&]sent\b/.test(location.search)) document.querySelector('.form-sent').hidden = false;
+			</script>
 
 	</body>
 </html>
