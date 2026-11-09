@@ -5,10 +5,10 @@
 - `index.html` — page content (text, sections, links).
 - `assets/css/palefire.css` — **the Palefire theme** (colors and fonts are variables at the top). Loaded after `main.css`, so it overrides the template.
 - `assets/css/main.css` — original template styles (best left alone).
-- `assets/js/` — scripts (`main.js` is the template's own logic; `lightbox.js` opens media photos full size — each tile's link points to its full image).
+- `assets/js/` — scripts (`main.js` is the template's own logic; `lightbox.js` opens media full size with swipe/arrows between items; a tile's link can be a full-size photo, a video file (.mp4) or a YouTube/Vimeo link).
 - `assets/css/images/` — gothic shapes: `arch.svg` (pointed arch behind show dates), `ornament-eye.png` (eye-symbol divider under every heading).
 - `images/logo.png`, `images/symbol.png`, `images/favicon.png` — band logo, the eye symbol from its top, and the browser-tab icon (rendered from the 3D logo).
-- `images/hero.jpg` — wide photo behind the logo at the top (placeholder; replace with a photo of the band playing). It's cropped to fit, so keep the important part near the middle.
+- `images/hero-stage.jpg` — wide photo behind the logo at the top. It's cropped to fit, so keep the important part near the middle.
 - `images/` — replace `pic00.jpg`–`pic06.jpg` with your own images (keep names or update `index.html`).
 
 Preview locally by opening `index.html` in a browser.
