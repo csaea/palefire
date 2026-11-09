@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="none">
+	<!-- Pointed (lancet) gothic arch, used as a mask shape for tiles -->
+	<path d="M0,400 V209 A220,220 0 0 1 150,0 A220,220 0 0 1 300,209 V400 Z" fill="#000"/>
+</svg>
