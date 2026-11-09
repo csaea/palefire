@@ -84,6 +84,7 @@ header > p { color: var(--text-dim); font-style: normal; }
 	margin: 0 auto;
 	padding: 3em 2.5em 2.5em 2.5em;
 	border: 1px solid #3a3142;
+	background: var(--bg-alt);
 }
 
 	.bio-frame .bio-text {
@@ -603,6 +604,7 @@ ul.social li a {
 	.gram { gap: 2px; }
 	.lightbox { padding: 3.5em 0.5em; }
 	.bio-frame { padding: 2em 1.25em 1.5em 1.25em; }
+	.bio-frame .bio-text { font-size: 0.85em; line-height: 1.65; }
 	.roundels { gap: 0.9em; }
 	.roundels .ring { width: 5em; height: 5em; }
 	.roundels svg { width: 2em; height: 2em; }
