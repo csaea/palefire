@@ -1,15 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 178">
-	<!-- Top of a gothic window frame: pointed arch, inner moulding, and a quatrefoil in the tracery.
-	     Colors are fixed here: #3a3142 = line, #a3122a = crimson. -->
+	<!-- Top of a gothic window frame: pointed arch, inner moulding.
+	     Colors are fixed here: #3a3142 = line. -->
 	<g fill="none" stroke-width="1">
 		<path d="M0.5,178 A179.5,179.5 0 0 1 150,1 A179.5,179.5 0 0 1 299.5,178" stroke="#3a3142" vector-effect="non-scaling-stroke"/>
 		<path d="M18,178 A162,162 0 0 1 150,18.8 A162,162 0 0 1 282,178" stroke="#3a3142" vector-effect="non-scaling-stroke"/>
-		<g stroke="#a3122a">
-			<circle cx="150" cy="72" r="22" vector-effect="non-scaling-stroke"/>
-			<circle cx="150" cy="62" r="9" vector-effect="non-scaling-stroke"/>
-			<circle cx="150" cy="82" r="9" vector-effect="non-scaling-stroke"/>
-			<circle cx="140" cy="72" r="9" vector-effect="non-scaling-stroke"/>
-			<circle cx="160" cy="72" r="9" vector-effect="non-scaling-stroke"/>
-		</g>
 	</g>
 </svg>

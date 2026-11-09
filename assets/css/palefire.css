@@ -101,13 +101,35 @@ header > p { color: var(--text-dim); font-style: normal; }
 		content: '';
 		display: block;
 		aspect-ratio: 300 / 178;
-		margin: 0 0 -4em 0;
+		margin: 0 0 -13em 0;
 		width: calc(100% + 5em);
 		margin-left: -2.5em;
 		background: url("images/arch-top.svg") bottom / 100% 100% no-repeat;
 	}
 
-	.arch-frame h2 { position: relative; }
+	.arch-frame h2 { position: relative; font-size: 1em; margin: 0; }
+
+	/* band logo inside the arch */
+	.arch-frame .logo {
+		display: block;
+		height: 20em;
+		max-width: 100%;
+		width: auto;
+		object-fit: contain;
+		margin: 0 auto 1.25em auto;
+		filter: drop-shadow(0 0 18px rgba(163, 18, 42, 0.35));
+	}
+
+	/* no ornament under the logo */
+	.wrapper .arch-frame h2:after { display: none; }
+
+.visually-hidden {
+	position: absolute;
+	width: 1px; height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
 
 hr { border-top-color: var(--line); }
 
@@ -261,79 +283,63 @@ button,
 			box-shadow: none;
 		}
 
-/* ---------- Gothic arched tiles (Media / Shows / Book Us) ---------- */
+/* ---------- Round "rose window" links (Media / Shows / Book Us) ---------- */
 
-/* Each tile is cut into a pointed arch with images/arch.svg.
-   The tile's own background is the arch's outline; ::before fills the inside. */
-
-.box {
-	background: var(--surface);
-	box-shadow: none;
-	border: 1px solid var(--line);
-	border-radius: 0;
-}
-
-a.box.style1 {
-	position: relative;
+.roundels {
 	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	aspect-ratio: 3 / 4;
-	max-width: 20em;
-	margin: 0 auto;
-	padding: 2em 1.5em 3em 1.5em;
-	border: 0;
-	background: var(--line);
-	text-decoration: none;
-	color: var(--text);
-	-webkit-mask: url("images/arch.svg") center / 100% 100% no-repeat;
-	mask: url("images/arch.svg") center / 100% 100% no-repeat;
-	transition: background-color .3s;
-	isolation: isolate;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 3em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
-	a.box.style1:before {
-		content: '';
-		position: absolute;
-		inset: 1px;
-		z-index: -1;
-		background:
-			radial-gradient(ellipse at 50% 15%, rgba(109, 63, 168, 0.18), transparent 60%),
-			var(--surface);
-		-webkit-mask: url("images/arch.svg") center / 100% 100% no-repeat;
-		mask: url("images/arch.svg") center / 100% 100% no-repeat;
-		transition: background .3s;
+	.roundels li { padding: 0; }
+
+	.roundels a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1em;
+		color: var(--text);
+		text-decoration: none;
+		font-family: var(--font-caps);
+		text-transform: uppercase;
+		letter-spacing: 0.25em;
+		font-size: 0.8em;
 	}
 
-	a.box.style1:hover { background: var(--blood); }
+	/* double ring, like the frame of a rose window */
+	.roundels .ring {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 7em;
+		height: 7em;
+		border-radius: 50%;
+		border: 1px solid var(--line);
+		outline: 1px solid var(--line);
+		outline-offset: 5px;
+		background: radial-gradient(circle, rgba(109, 63, 168, 0.18), var(--surface) 70%);
+		transition: border-color .3s, outline-color .3s, box-shadow .3s;
+	}
 
-		a.box.style1:hover:before {
-			background:
-				radial-gradient(ellipse at 50% 15%, rgba(224, 32, 63, 0.25), transparent 65%),
-				var(--surface);
+	.roundels svg {
+		width: 2.6em;
+		height: 2.6em;
+		fill: none;
+		stroke: var(--blood-hi);
+		stroke-width: 1.1;
+	}
+
+	.roundels a:hover { color: var(--heading); }
+
+		.roundels a:hover .ring {
+			border-color: var(--blood);
+			outline-color: var(--blood);
+			box-shadow: 0 0 22px rgba(224, 32, 63, 0.4);
 		}
-
-	/* glow has to sit on the parent, because the arch mask would cut it off */
-	div:has(> a.box.style1) { transition: filter .3s; }
-	div:has(> a.box.style1:hover) { filter: drop-shadow(0 0 14px rgba(224, 32, 63, 0.45)); }
-
-	a.box.style1 h3 {
-		font-size: 1.3em;
-		letter-spacing: 0.3em;
-		margin: 0 0 0.5em 0;
-	}
-
-	a.box.style1 p { color: var(--text-dim); margin: 0; }
-
-	a.box.style1 .icon.featured { margin-bottom: auto; margin-top: 35%; }
-
-.icon.featured {
-	color: var(--blood-hi);
-	cursor: inherit;
-	text-shadow: 0 0 20px rgba(224, 32, 63, 0.5);
-}
-
-	.icon.featured:before { font-size: 3em; }
 
 /* ---------- Media grid (Instagram-style) ---------- */
 
@@ -374,15 +380,18 @@ a.box.style1 {
 	.gram a:hover img { transform: scale(1.05); filter: saturate(0.5) brightness(0.7); }
 	.gram a:hover:after { opacity: 1; }
 
-	/* small badge in the corner: photo or video */
+	/* small thin-line badge in the corner: photo or video */
 	.gram .badge {
 		position: absolute;
-		top: 0.6em;
-		right: 0.7em;
+		top: 0.5em;
+		right: 0.5em;
 		z-index: 2;
-		color: #fff;
-		font-size: 0.9em;
-		text-shadow: 0 0 6px rgba(0,0,0,0.8);
+		width: 1.3em;
+		height: 1.3em;
+		fill: none;
+		stroke: #fff;
+		stroke-width: 1.5;
+		filter: drop-shadow(0 0 3px rgba(0,0,0,0.9));
 	}
 
 /* ---------- Shows calendar ---------- */
@@ -485,8 +494,11 @@ ul.social li a {
 	#top.hero { height: 70vh; padding: 0; }
 	.gram { gap: 2px; }
 	.arch-frame { padding: 0 1.25em 1.5em 1.25em; }
-	.arch-frame:before { width: calc(100% + 2.5em); margin: 0 0 -2.5em -1.25em; }
-	a.box.style1 { max-width: 13em; }
+	.arch-frame:before { width: calc(100% + 2.5em); margin: 0 0 -7em -1.25em; }
+	.roundels { gap: 1.5em; }
+	.roundels .ring { width: 5.5em; height: 5.5em; }
+	.roundels a { font-size: 0.7em; letter-spacing: 0.15em; }
+	.arch-frame .logo { height: 13em; }
 	.shows .show { gap: 1em; padding: 1em; flex-wrap: wrap; }
 	.shows .when { flex-basis: 3.5em; }
 	.shows .what { flex-basis: calc(100% - 4.5em); line-height: 1.5; }

@@ -9,8 +9,18 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Grenze+Gotisch:wght@400;500;700&display=swap" />
 		<link rel="stylesheet" href="assets/css/palefire.css" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 	</head>
 	<body class="is-preload">
+
+		<!-- Thin line icons, used below with <svg><use href="#i-name"/></svg> -->
+			<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+				<symbol id="i-media" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14"/><path d="M10 9l5 3-5 3z"/></symbol>
+				<symbol id="i-shows" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14"/><path d="M4 10h16M8 3v5M16 3v5"/></symbol>
+				<symbol id="i-book" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12"/><path d="M3 6l9 7 9-7"/></symbol>
+				<symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-2 6 4"/><circle cx="16" cy="9" r="1.5"/></symbol>
+				<symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
+			</svg>
 
 		<!-- Nav -->
 			<nav id="nav">
@@ -31,32 +41,15 @@
 			<article id="bio" class="wrapper style2">
 				<div class="container">
 					<header class="arch-frame">
-						<h2>Palefire</h2>
-						<p>Our bio goes here. Who we are, where we play, and what we sound like.</p>
+						<h2><img class="logo" src="images/logo.png" alt="" /><span class="visually-hidden">Palefire</span></h2>
+						<p>Our bio goes here.</p>
 					</header>
-					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#media" class="box style1 scrolly">
-								<span class="icon solid featured fa-photo-video"></span>
-								<h3>Media</h3>
-								<p>Photos and videos.</p>
-							</a>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#shows" class="box style1 scrolly">
-								<span class="icon solid featured fa-calendar-alt"></span>
-								<h3>Shows</h3>
-								<p>Upcoming dates.</p>
-							</a>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#book" class="box style1 scrolly">
-								<span class="icon solid featured fa-envelope-open-text"></span>
-								<h3>Book Us</h3>
-								<p>Shows, events and press.</p>
-							</a>
-						</div>
-					</div>
+					<!-- Round "rose window" links -->
+					<ul class="roundels">
+						<li><a href="#media" class="scrolly"><span class="ring"><svg><use href="#i-media"/></svg></span>Media</a></li>
+						<li><a href="#shows" class="scrolly"><span class="ring"><svg><use href="#i-shows"/></svg></span>Shows</a></li>
+						<li><a href="#book" class="scrolly"><span class="ring"><svg><use href="#i-book"/></svg></span>Book Us</a></li>
+					</ul>
 				</div>
 			</article>
 
@@ -68,15 +61,15 @@
 						<p>Photos and videos. See more on Instagram at <a href="https://www.instagram.com/palefireband/">@palefireband</a>.</p>
 					</header>
 					<div class="gram">
-						<a href="#"><img src="images/pic01.jpg" alt="" /><span class="badge icon solid fa-image"></span></a>
-						<a href="#"><img src="images/pic02.jpg" alt="" /><span class="badge icon solid fa-play"></span></a>
-						<a href="#"><img src="images/pic03.jpg" alt="" /><span class="badge icon solid fa-image"></span></a>
-						<a href="#"><img src="images/pic04.jpg" alt="" /><span class="badge icon solid fa-image"></span></a>
-						<a href="#"><img src="images/pic05.jpg" alt="" /><span class="badge icon solid fa-play"></span></a>
-						<a href="#"><img src="images/pic06.jpg" alt="" /><span class="badge icon solid fa-image"></span></a>
-						<a href="#"><img src="images/pic02.jpg" alt="" /><span class="badge icon solid fa-image"></span></a>
-						<a href="#"><img src="images/pic04.jpg" alt="" /><span class="badge icon solid fa-play"></span></a>
-						<a href="#"><img src="images/pic01.jpg" alt="" /><span class="badge icon solid fa-image"></span></a>
+						<a href="#"><img src="images/pic01.jpg" alt="" /><svg class="badge"><use href="#i-photo"/></svg></a>
+						<a href="#"><img src="images/pic02.jpg" alt="" /><svg class="badge"><use href="#i-play"/></svg></a>
+						<a href="#"><img src="images/pic03.jpg" alt="" /><svg class="badge"><use href="#i-photo"/></svg></a>
+						<a href="#"><img src="images/pic04.jpg" alt="" /><svg class="badge"><use href="#i-photo"/></svg></a>
+						<a href="#"><img src="images/pic05.jpg" alt="" /><svg class="badge"><use href="#i-play"/></svg></a>
+						<a href="#"><img src="images/pic06.jpg" alt="" /><svg class="badge"><use href="#i-photo"/></svg></a>
+						<a href="#"><img src="images/pic02.jpg" alt="" /><svg class="badge"><use href="#i-photo"/></svg></a>
+						<a href="#"><img src="images/pic04.jpg" alt="" /><svg class="badge"><use href="#i-play"/></svg></a>
+						<a href="#"><img src="images/pic01.jpg" alt="" /><svg class="badge"><use href="#i-photo"/></svg></a>
 					</div>
 					<footer>
 						<a href="https://www.instagram.com/palefireband/" class="button large">Follow us on Instagram</a>
@@ -135,10 +128,7 @@
 										<input type="text" name="email" id="email" placeholder="Your email" />
 									</div>
 									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Event, date and venue" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Tell us about your event"></textarea>
+										<textarea name="message" id="message" placeholder="Tell us about your event: date, venue, times, etc."></textarea>
 									</div>
 									<div class="col-12">
 										<ul class="actions">
