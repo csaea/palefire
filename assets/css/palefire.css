@@ -1,5 +1,5 @@
 /*
-	Pale Fire theme
+	Palefire theme
 	Loaded AFTER main.css, so everything here overrides the template.
 	Change the colors and fonts in :root to restyle the whole site.
 */
@@ -63,7 +63,7 @@ h3, h4, h5, h6 {
 	font-size: 1.1em;
 }
 
-header > p { color: var(--text-dim); font-style: italic; }
+header > p { color: var(--text-dim); font-style: normal; }
 
 hr { border-top-color: var(--line); }
 
