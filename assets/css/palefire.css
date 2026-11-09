@@ -226,10 +226,13 @@ hr { border-top-color: var(--line); }
 /* ---------- Round links row ---------- */
 
 #links { margin: 0; }
-#links {
-	padding: 4em 0;
-	/* faint Victorian damask (images/damask.svg); change its fill color there to make it stronger or weaker */
-	background: var(--bg-alt) url("images/damask.svg") center / 96px auto repeat;
+#links { padding: 4em 0; }
+
+/* faint Victorian damask (images/damask.svg); change its fill color there to make it stronger or weaker */
+#links,
+#shows.wrapper,
+#book.wrapper {
+	background: var(--bg-alt) url("images/damask.svg") center top / 96px auto repeat;
 }
 
 	#links .social { margin: 1.5em 0 0 0; padding: 0; }
