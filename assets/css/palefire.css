@@ -228,7 +228,8 @@ hr { border-top-color: var(--line); }
 #links { margin: 0; }
 #links { padding: 4em 0; }
 
-	#links .social { margin: 1.25em 0 0 0; }
+	#links .social { margin: 1.5em 0 0 0; padding: 0; }
+	#links .social li { margin-top: 0; }
 
 /* ---------- Buttons: sharp, thin-bordered, uppercase ---------- */
 
