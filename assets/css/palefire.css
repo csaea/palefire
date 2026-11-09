@@ -69,9 +69,9 @@ header > p { color: var(--text-dim); font-style: normal; }
 .wrapper header h2:after {
 	content: '';
 	display: block;
-	width: 21em;
+	width: 16em;
 	max-width: 80%;
-	height: 2.8em;
+	height: 1.5em;
 	margin: 0.6em auto 0 auto;
 	background: url("images/ornament-eye.png") center / contain no-repeat;
 	font-size: 0.4em;
@@ -227,6 +227,8 @@ hr { border-top-color: var(--line); }
 
 #links { margin: 0; }
 #links { padding: 4em 0; }
+
+	#links .social { margin: 1.25em 0 0 0; }
 
 /* ---------- Buttons: sharp, thin-bordered, uppercase ---------- */
 
