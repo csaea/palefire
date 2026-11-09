@@ -15,6 +15,7 @@
 
 		<!-- Thin line icons, used below with <svg><use href="#i-name"/></svg> -->
 			<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+				<symbol id="i-bio" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></symbol>
 				<symbol id="i-media" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14"/><path d="M10 9l5 3-5 3z"/></symbol>
 				<symbol id="i-shows" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14"/><path d="M4 10h16M8 3v5M16 3v5"/></symbol>
 				<symbol id="i-book" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12"/><path d="M3 6l9 7 9-7"/></symbol>
@@ -32,29 +33,43 @@
 				</ul>
 			</nav>
 
-		<!-- Home: full-width hero image (replace images/hero.jpg with a band photo) -->
-			<article id="top" class="wrapper hero">
-				<img src="images/hero.jpg" alt="Palefire" />
+		<!-- Home: the band logo in a gothic arch -->
+			<article id="top" class="wrapper style1">
+				<div class="container">
+					<header class="arch-frame hero-logo">
+						<h1><img class="logo" src="images/logo.png" alt="" /><span class="visually-hidden">Palefire</span></h1>
+					</header>
+				</div>
 			</article>
 
+		<!-- Banner: wide photo of the band playing (replace images/banner.jpg) -->
+			<section id="banner">
+				<img src="images/banner.jpg" alt="Palefire playing live" />
+			</section>
+
+		<!-- Round "rose window" links -->
+			<section id="links" class="wrapper style2">
+				<ul class="roundels">
+					<li><a href="#bio" class="scrolly"><span class="ring"><svg><use href="#i-bio"/></svg></span>Bio</a></li>
+					<li><a href="#media" class="scrolly"><span class="ring"><svg><use href="#i-media"/></svg></span>Media</a></li>
+					<li><a href="#shows" class="scrolly"><span class="ring"><svg><use href="#i-shows"/></svg></span>Shows</a></li>
+					<li><a href="#book" class="scrolly"><span class="ring"><svg><use href="#i-book"/></svg></span>Book Us</a></li>
+				</ul>
+			</section>
+
 		<!-- Bio -->
-			<article id="bio" class="wrapper style2">
+			<article id="bio" class="wrapper style3">
 				<div class="container">
 					<header class="arch-frame">
-						<h2><img class="logo" src="images/logo.png" alt="" /><span class="visually-hidden">Palefire</span></h2>
+						<img class="symbol" src="images/symbol.png" alt="" />
+						<h2>Palefire</h2>
 						<p>Our bio goes here.</p>
 					</header>
-					<!-- Round "rose window" links -->
-					<ul class="roundels">
-						<li><a href="#media" class="scrolly"><span class="ring"><svg><use href="#i-media"/></svg></span>Media</a></li>
-						<li><a href="#shows" class="scrolly"><span class="ring"><svg><use href="#i-shows"/></svg></span>Shows</a></li>
-						<li><a href="#book" class="scrolly"><span class="ring"><svg><use href="#i-book"/></svg></span>Book Us</a></li>
-					</ul>
 				</div>
 			</article>
 
 		<!-- Media -->
-			<article id="media" class="wrapper style3">
+			<article id="media" class="wrapper style2">
 				<div class="container">
 					<header>
 						<h2>Media</h2>
@@ -78,7 +93,7 @@
 			</article>
 
 		<!-- Shows -->
-			<article id="shows" class="wrapper style2">
+			<article id="shows" class="wrapper style3">
 				<div class="container medium">
 					<header>
 						<h2>Shows</h2>
