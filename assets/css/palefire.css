@@ -652,19 +652,3 @@ ul.social li a {
 @media screen and (max-width: 736px) {
 	#copyright li { display: block; margin: 0.4em 0; }
 }
-
-/* quick facts for bookers, in the bio box */
-.bio-frame .facts {
-	list-style: none;
-	margin: 0.5em 0 2em 0;
-	padding: 1em 0;
-	border-top: 1px solid var(--line);
-	border-bottom: 1px solid var(--line);
-	font-family: var(--font-caps);
-	font-size: 0.75em;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	color: var(--heading);
-}
-	.bio-frame .facts li { padding: 0.35em 0; line-height: 1.5; }
-	.bio-frame .facts li:before { content: '\2020'; color: var(--blood-hi); margin-right: 0.6em; }
