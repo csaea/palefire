@@ -592,7 +592,7 @@ ul.social li a {
 	}
 
 #copyright { color: var(--text-dim); }
-#copyright a { color: inherit; text-transform: lowercase; }
+#copyright a { color: inherit; text-transform: lowercase; border-bottom: 0; text-decoration: none; }
 
 /* ---------- Small screens ---------- */
 
