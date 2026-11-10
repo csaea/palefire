@@ -2,7 +2,8 @@
 	Lightbox for the media grid.
 
 	- Tap a tile to open it full size.
-	- Swipe left/right (or use the arrows / arrow keys) to see the others.
+	- Swipe left/right (or use the arrow keys) to see the others.
+	- Pinch to zoom on phones (swiping and tap-to-close pause while zoomed in).
 	- Tap a photo, tap the dark background, press Esc, or tap × to close.
 
 	Each tile's link (href) says what opens:
@@ -20,8 +21,6 @@
 	box.innerHTML =
 		'<div class="lb-stage"></div>' +
 		'<button class="lb-close" aria-label="Close">&times;</button>' +
-		'<button class="lb-prev" aria-label="Previous">&lsaquo;</button>' +
-		'<button class="lb-next" aria-label="Next">&rsaquo;</button>' +
 		'<div class="lb-count"></div>';
 	document.body.appendChild(box);
 
@@ -81,25 +80,30 @@
 		link.addEventListener('click', function (e) { e.preventDefault(); open(i); });
 	});
 
-	box.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(current - 1); });
-	box.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(current + 1); });
 	box.querySelector('.lb-close').addEventListener('click', function (e) { e.stopPropagation(); close(); });
 
 	// tap to close (but not when tapping a playing video, so its controls work)
 	var swiped = false;
+	function zoomed() { return window.visualViewport && window.visualViewport.scale > 1.05; }
 	box.addEventListener('click', function (e) {
 		if (swiped) { swiped = false; return; }
+		if (zoomed()) return;
 		if (e.target.tagName === 'VIDEO' || e.target.tagName === 'IFRAME') return;
 		close();
 	});
 
 	// swipe left / right
-	var startX = 0, startY = 0;
+	var startX = 0, startY = 0, multi = false;
 	box.addEventListener('touchstart', function (e) {
+		multi = e.touches.length > 1;           // two fingers = pinch, not swipe
 		startX = e.touches[0].clientX;
 		startY = e.touches[0].clientY;
 	}, { passive: true });
+	box.addEventListener('touchmove', function (e) {
+		if (e.touches.length > 1) multi = true;
+	}, { passive: true });
 	box.addEventListener('touchend', function (e) {
+		if (multi || zoomed()) { if (multi) { swiped = true; setTimeout(function () { swiped = false; }, 400); } return; }
 		var dx = e.changedTouches[0].clientX - startX;
 		var dy = e.changedTouches[0].clientY - startY;
 		if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
